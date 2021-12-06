@@ -103,6 +103,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "my-notes:build:production",
+            "firebaseProject": "lab-notes-6996a",
+            "firebaseHostingSite": "lab-notes-6996a"
+          }
         }
       }
     }

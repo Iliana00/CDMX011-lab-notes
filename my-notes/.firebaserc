@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "lab-notes-6996a": {
+      "hosting": {
+        "my-notes": [
+          "lab-notes-6996a"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "lab-notes-6996a"
+  }
+}
