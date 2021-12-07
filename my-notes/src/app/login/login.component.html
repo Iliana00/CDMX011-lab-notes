@@ -1,23 +1,32 @@
-<form action="" id="login-form" class="form">
-  <p class="loginText">Login</p>
-  <label for="login-email">Email</label>
-  <input type="email" name="email" ngModel id="loginEmail" required />
-  <label for="login-password">Password</label>
-  <input type="password" name="password" ngModel id="loginPassword" required />
-  <div class="error-message" id="loginMessages"></div>
-  <div class="center-item">
-    <button type="submit" id="btnLogin" >Login</button>
-  </div>
-  <div class="login-redes">
-    <p class="loginwith">Or login with:</p> 
-    <div class="redes">
-      <img src="../../assets/img/face.png" alt="logo facebook" class="logo-facebook" />
-      <img src="../../assets/img/gmail.png" alt="logo google" class="logo-google" />
-    </div>   
+<img class="main-logo" src="../assets/img/Note-it-font.png" alt="logo Note-it">
+<div class="container-1">
     
-  </div>
-  <div class="pieform">
-    <p style="font-size: 12px">You do not have an account</p>
-  </div>
-  <!-- <button type="submit" id="signup">Sign Up</button> -->
-</form>
+    <div class="container-2">
+      <form action="" id="login-form" class="form" >
+        <label for="login-email">Email</label>
+        <input type="email" name="email" #emailLogin id="loginEmail" />
+        <label for="login-password">Password</label>
+        <input type="password" name="password" #passwordLogin id="loginPassword"  />
+        <p class="error-message" id="loginMessages"></p>
+        <div class="center-item">
+          <button  type="button" (click)="formLogin({email: emailLogin.value, password: passwordLogin.value})"  id="btnLogin">Login</button>
+        </div>
+        <div class="login-redes">
+          <p class="loginwith">OR</p>
+          <button type="submit" id="btnRegister">Create account</button>
+          <div class="redes">
+            <fa-icon class="logo-facebook" [icon]="faFacebook"></fa-icon>
+            <fa-icon class="logo-google" [icon]="faGoogle"></fa-icon>
+          </div>
+        </div>
+        <div class="pieform">
+          <p style="font-size: 12px"></p>
+        </div>
+        <!-- <button type="submit" id="signup">Sign Up</button> -->
+      </form>
+    </div>    
+                          
+</div>
+
+
+

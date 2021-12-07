@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
-import { AuthService } from 'src/services/auth.services';
+import { faFacebook } from '@fortawesome/free-brands-svg-icons';
+import { faGoogle } from '@fortawesome/free-brands-svg-icons';
+import { AuthService } from '../../services/auth.services';
+
 
 
 
@@ -10,29 +13,45 @@ import { AuthService } from 'src/services/auth.services';
 })
 export class LoginComponent {
 
- usuario ={
+  faFacebook = faFacebook;
+  faGoogle = faGoogle;
+
+ user ={
    email: "",
-   password: ""
+   password: "" 
  }
 
- login(){
+ /* login(){
    console.log(this.usuario)
- }
+ } */
+ constructor (private auth:AuthService){ }
+  ngOnInit(): void {}
+
+  /* loginForm(email: string, password: string){
+    
+     this.auth.login(email, password)
+  
+    .then(()=>console.log('usuario'))
+         
+  }  */
+  
+  /*
+  sendEmail({ email: email.value, password: password.value })
+  */
+  formLogin(value: any){
+    //const {emailLogin, passwordLogin} = value
+
+    this.user.email = value.email;
+    this.user.password = value.password;
+
+    console.log(value)
+    console.log(this.user)
+
+    this.auth.login(this.user.email, this.user.password).then(()=> alert("meeeeeessage"))
+  }
 
 }
 
-/* constructor (private auth:AuthService){ }
-  ngOnInit(): void {}
 
-  async loginForm(email: string, password: string){
-    try{
-      await this.auth.login(email, password)
-    } 
-    catch (e: any){
-      console.log('ERRRRRROR')
-    }        
-  } 
   
-  (ngSubmit)="loginForm( email, password)
   
-  */
