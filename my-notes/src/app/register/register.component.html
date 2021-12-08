@@ -5,14 +5,14 @@
     
       <form action="" id="signin-form" class="form" >
         <label for="signin-email">Email</label>
-        <input type="email" name="email" ngModel id="signin-email" />
+        <input type="email" name="email" #emailRegister  id="signin-email" />
         <label for="signin-password">Password</label>
-        <input type="password" name="password" ngModel id="signin-password" onpaste="return false" />
+        <input type="password" name="password" #passwordRegister  id="signin-password" onpaste="return false" />
         <label for="password-confirm">Confirm password</label>
-        <input type="password" name="password" ngModel id="password-confirm" />
+        <input type="password" name="password" #confirmationRegister  id="password-confirm" />
         <p class="error-message" id="signin-messages"></p>
         <div class="center-item">
-            <button type="submit" id="btnRegister">Create account</button>
+            <button type="button" (click)="formRegister({email:emailRegister.value, password: passwordRegister.value, confirmation: confirmationRegister.value})" id="btnRegister">Create account</button>
         </div>
         <!-- <div class="signin-redes">
           <p class="signinwith">OR</p>

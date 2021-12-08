@@ -21,23 +21,9 @@ export class LoginComponent {
    password: "" 
  }
 
- /* login(){
-   console.log(this.usuario)
- } */
  constructor (private auth:AuthService){ }
   ngOnInit(): void {}
 
-  /* loginForm(email: string, password: string){
-    
-     this.auth.login(email, password)
-  
-    .then(()=>console.log('usuario'))
-         
-  }  */
-  
-  /*
-  sendEmail({ email: email.value, password: password.value })
-  */
   formLogin(value: any){
     //const {emailLogin, passwordLogin} = value
 
@@ -47,7 +33,9 @@ export class LoginComponent {
     console.log(value)
     console.log(this.user)
 
-    this.auth.login(this.user.email, this.user.password).then(()=> alert("meeeeeessage"))
+    this.auth.login(this.user.email, this.user.password).then(()=> 
+    window.location.href = '/home',    
+   )
   }
 
 }

@@ -11,7 +11,7 @@ export class AuthService{
     async login(email: string, password: string){
         return await this.auth.signInWithEmailAndPassword(email, password) 
     }
-    async sigin(email: string, password: string){
+    async sigup(email: string, password: string){
         return await this.auth.createUserWithEmailAndPassword(email, password)
     }
     async signout(){

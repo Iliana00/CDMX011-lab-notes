@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NavComponent } from './pages/nav/nav.component';
 
 @Component({
     selector: 'home-root',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
     styleUrls: ['./home.component.scss']
   })
   export class HomeComponent {
-
+     
   }
